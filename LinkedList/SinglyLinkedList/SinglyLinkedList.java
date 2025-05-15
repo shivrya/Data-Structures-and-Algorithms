@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Collections;
 
-
+// Creating custom data type of Node which contains value and address
 class Node{
     int value;
     Node next;
