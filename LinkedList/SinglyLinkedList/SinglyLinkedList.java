@@ -40,6 +40,7 @@ public class SinglyLinkedList {
 
     }
 
+    // Returns length of singly linked list
     public static int lengthOfLL(Node head){
         int length = 0;
 
@@ -51,6 +52,7 @@ public class SinglyLinkedList {
         return length;
     }
 
+    // traverse and print entire singly linked list
     public static void traverseLL(Node head){
         Node current = head;
         while(current!=null){
@@ -60,6 +62,7 @@ public class SinglyLinkedList {
         }
     }
 
+    // check if an element is present in linked list or not
     public static boolean searchElementInLL(Node head,int target){
         boolean isPresent = false;
         Node current = head;
