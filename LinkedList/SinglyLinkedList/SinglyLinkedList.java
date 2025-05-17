@@ -1,3 +1,5 @@
+package Data_Structures_Algorithms.LinkedList.SinglyLinkedList;
+
 import java.util.*;
 import java.util.Collections;
 
@@ -19,14 +21,15 @@ public class SinglyLinkedList {
 
             int[] arr = {1111,2,3,4,5};
             Node head = convertArrayToLL(arr);
-            System.out.println(head.value);
-            System.out.println(lengthOfLL(head));
+            //System.out.println(head.value);
+            //System.out.println(lengthOfLL(head));
             traverseLL(head);
-            System.out.println();
-            System.out.println(searchElementInLL(head, 11));
+            //System.out.println();
+            //System.out.println(searchElementInLL(head, 11));
             
     }
 
+    // converts given array into singly linked list
     public static Node convertArrayToLL(int[] arr){
         Node head = new Node(arr[0],null);
         Node mover = head;
@@ -56,7 +59,6 @@ public class SinglyLinkedList {
     public static void traverseLL(Node head){
         Node current = head;
         while(current!=null){
-            
             System.out.print(current.value + "->");
             current = current.next;
         }
@@ -72,6 +74,5 @@ public class SinglyLinkedList {
             current = current.next;
         }
         return isPresent;
-
     }
 }
