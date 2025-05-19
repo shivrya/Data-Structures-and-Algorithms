@@ -1,4 +1,4 @@
-package Data_Structures_Algorithms.LinkedList.SinglyLinkedList;
+package Data_Structures_Algorithms.LinkedList;
 
 import java.lang.classfile.components.ClassPrinter.ListNode;
 import java.util.*;
@@ -16,7 +16,7 @@ class Node{
 
 }
 
-public class SinglyLinkedList {
+public class Foundation_SinglyLinkedList {
 
     public static void main(String[] args){
 
@@ -231,6 +231,50 @@ public class SinglyLinkedList {
                     return head;
                 }
                 tmp = tmp.next;
+        }
+        return head;
+    }
+    //converts entire array into linkedList
+    public static Node convertLLToArray(int[] arr){
+        Node head = new Node(arr[0],null);
+        Node mover = head;
+
+        for(int i=1;i<arr.length;i++){
+            Node tmp = new Node(arr[i],null);
+            mover.next = tmp;
+            mover = tmp;
+        }
+        return head;
+    }
+
+    // delete head node
+    public static Node deleteHead1(Node head){
+        // if head is null then return null
+        if(head==null)
+            return null;
+
+        Node tmp = head;
+        head = head.next;
+        tmp = null;
+        return head;
+    }
+
+    public static Node deleteTail1(Node head){
+        int size = 0;
+
+        Node current = head;
+
+        while(current!=null){
+            size++;
+            current = current.next;
+        }
+        Node tmp = head;
+        for(int i=1;i<=size;i++){
+            if(i==size-1){
+                tmp.next = null;
+                break;
+            }
+            tmp = tmp.next;
         }
         return head;
     }

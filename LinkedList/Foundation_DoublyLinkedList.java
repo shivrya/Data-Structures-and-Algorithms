@@ -1,4 +1,4 @@
-package Data_Structures_Algorithms.LinkedList.DoublyLinkedList;
+package Data_Structures_Algorithms.LinkedList;
 
 
 class Node{
@@ -27,7 +27,7 @@ class Node{
 }
 
 
-public class BasicsDoublyLinkedList {
+public class Foundation_DoublyLinkedList {
 
     public static void main(String[] args) {
         
