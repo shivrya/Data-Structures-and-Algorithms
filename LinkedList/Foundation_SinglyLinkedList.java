@@ -1,9 +1,5 @@
 package Data_Structures_Algorithms.LinkedList;
 
-import java.lang.classfile.components.ClassPrinter.ListNode;
-import java.util.*;
-import java.util.Collections;
-
 // Creating custom data type of Node which contains value and address
 class Node{
     int value;
