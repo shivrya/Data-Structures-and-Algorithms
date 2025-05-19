@@ -164,5 +164,74 @@ public class SinglyLinkedList {
         return head;
     }
     
-    
+    public static Node insertAtHead(Node head, int X) {
+
+        Node tmp = new Node(X,head);
+        return tmp;
+    }
+
+    public static Node insertAtTail(Node head, int X) {
+
+        Node tmp = head;
+        Node newNode = new Node(X,null);
+
+        if(head==null) 
+            return newNode;
+
+
+        while(tmp.next!=null){
+            tmp = tmp.next;            
+        }
+        tmp.next = newNode;
+        return head;
+    }
+
+    public Node insertAtKthPosition(Node head, int X, int K) {
+
+        Node newNode = new Node(X,null);
+
+        if(head==null)
+            return newNode;
+        
+        if(K==1){
+            newNode.next = head;
+            return newNode;
+        }
+        Node tmp = head;
+        int counter=0;
+
+        while(tmp!=null){
+            counter++;
+            if(counter==K-1){
+                newNode.next = tmp.next;
+                tmp.next = newNode;
+                break;
+            }
+            tmp = tmp.next;
+        }
+        return head;
+    }
+
+    public Node insertBeforeX(Node head, int X, int val) {
+        Node newNode = new Node(val,null);
+        Node tmp = head;
+
+        if(head==null)
+            return head;
+
+        if(tmp.value==X){
+            newNode.next = tmp;
+            return newNode;
+        }
+
+        while(tmp.next!=null){
+                if(tmp.next.value==X){
+                    newNode.next = tmp.next;
+                    tmp.next = newNode;
+                    return head;
+                }
+                tmp = tmp.next;
+        }
+        return head;
+    }
 }
