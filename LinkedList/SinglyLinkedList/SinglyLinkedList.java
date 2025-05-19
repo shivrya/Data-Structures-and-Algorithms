@@ -1,5 +1,6 @@
 package Data_Structures_Algorithms.LinkedList.SinglyLinkedList;
 
+import java.lang.classfile.components.ClassPrinter.ListNode;
 import java.util.*;
 import java.util.Collections;
 
@@ -74,5 +75,19 @@ public class SinglyLinkedList {
             current = current.next;
         }
         return isPresent;
+    }
+
+    public Node reverseList(Node head) {
+        Node previous = null;
+        Node current = head;
+        Node next = null;
+
+        while(current!=null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;  
     }
 }
