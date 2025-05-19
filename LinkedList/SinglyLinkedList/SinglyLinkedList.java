@@ -27,6 +27,7 @@ public class SinglyLinkedList {
             traverseLL(head);
             //System.out.println();
             //System.out.println(searchElementInLL(head, 11));
+            reverseList(head);
             
     }
 
@@ -77,7 +78,7 @@ public class SinglyLinkedList {
         return isPresent;
     }
 
-    public Node reverseList(Node head) {
+    public static Node reverseList(Node head) {
         Node previous = null;
         Node current = head;
         Node next = null;
@@ -90,4 +91,78 @@ public class SinglyLinkedList {
         }
         return previous;  
     }
+
+    public static Node deleteHead(Node head) {
+        if(head==null)
+            return null;
+            
+            Node newHeadNode = head.next;
+        head.next = null;
+        return newHeadNode;
+    }
+
+    public Node deleteTail(Node head) {
+
+        if(head==null || head.next==null)
+            return null;
+
+            Node tmp = head;
+        while(tmp.next.next!=null){
+            tmp = tmp.next;
+        }
+        tmp.next = null;
+        return head;
+    }
+
+    public Node deleteKthNode(Node head, int k) {
+        if(head==null)
+            return null;
+
+        
+        if(k==1){
+            Node tmp = head;
+            head = tmp.next;
+            tmp.next = null;
+            return head;
+        }
+        Node tmp = head;
+        Node previous = null;
+        int counter = 0;
+
+        while(tmp!=null){
+            counter++;
+            if(counter==k){
+                previous.next = previous.next.next;
+                tmp.next = null;
+                break;
+            }
+            previous = tmp;
+            tmp = tmp.next;
+        }
+        return head;
+    }
+
+    public Node deleteNodeWithValueX(Node head, int X) {
+        if(head==null)
+            return null;
+
+        if(head.value==X)
+            return head.next;
+        
+        Node tmp = head;
+        Node previous = null;
+
+        while(tmp!=null){
+
+            if(tmp.value==X){
+                previous.next = previous.next.next;
+                tmp.next = null;
+            }
+            previous = tmp;
+            tmp = tmp.next;
+        }
+        return head;
+    }
+    
+    
 }
