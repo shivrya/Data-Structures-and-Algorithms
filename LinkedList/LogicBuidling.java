@@ -1,5 +1,7 @@
 package Data_Structures_Algorithms.LinkedList;
 
+import java.lang.classfile.components.ClassPrinter.ListNode;
+
 // Creating custom data type of Node which contains value and address
 class Node{
     int value;
@@ -78,5 +80,21 @@ public class LogicBuidling {
 
         }
         return newHead.next;
+    }
+
+    // reverse a linked list
+
+    public Node reverseList(Node head) {
+        Node previous = null;
+        Node current = head;
+        Node next = null;
+
+      while(current!=null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+      }
+      return previous;
     }
 }
