@@ -84,4 +84,21 @@ public class Foundation_DoublyLinkedList {
         return tmp;
 
     }
+
+    public ListNode deleteTail(ListNode head) {
+
+        if(head==null || head.next==null)
+            return null;
+        
+        ListNode tmp = head;
+
+        while(tmp.next!=null){
+            tmp = tmp.next;
+        }
+        ListNode previous = tmp.prev;
+
+        previous.next = null;
+        tmp.prev = null;
+        return head;
+    }
 }
