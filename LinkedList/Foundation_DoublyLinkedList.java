@@ -27,9 +27,10 @@ class ListNode {
 public class Foundation_DoublyLinkedList {
 
     public static void main(String[] args) {
-        int[] nums = {10, 20, 30, 40};
+        int[] nums = {10, 20, 30, 40,50};
         ListNode head = arrayToLinkedList(nums);
         printList(head);
+        isPalidrom(head);
     }
 
     public static ListNode arrayToLinkedList(int[] nums) {
@@ -53,5 +54,34 @@ public class Foundation_DoublyLinkedList {
             tmp = tmp.next;
         }
         System.out.println();
+    }
+
+    public static boolean isPalidrom(ListNode head){
+            if (head == null || head.next == null) return true;
+    
+            // Step 1: Find middle of the list
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast.next != null && fast != null ) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return true;
+    }
+
+    public ListNode deleteHead(ListNode head) {
+
+        if(head==null)
+            return head;
+        
+        if(head.next==null)
+            return null;
+        
+
+        ListNode tmp = head.next;
+        tmp.prev = null;
+        head.next = null;
+        return tmp;
+
     }
 }
