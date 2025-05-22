@@ -274,4 +274,38 @@ public class Foundation_SinglyLinkedList {
         }
         return head;
     }
+
+    public boolean isPalindrome(ListNode head) {
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode newHead = reverseLinkedList(slow.next);
+
+        while(head!=null && newHead!=null){
+            if(head.value!=newHead.value)
+                return false;
+            
+            head = head.next;
+            newHead = newHead.next;
+        }
+        return true;
+    }
+    public ListNode reverseLinkedList(ListNode head){
+        ListNode previous = null;
+        ListNode current=head;
+        ListNode next = null;
+
+        while(current!=null){
+            next = current.next;
+            current.next=previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
 }
