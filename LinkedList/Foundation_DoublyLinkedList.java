@@ -88,4 +88,38 @@ public class Foundation_DoublyLinkedList {
         tmp.prev = null;
         return head;
     }
+
+    public ListNode deleteKthElement(ListNode head, int k) {
+        if(head==null || head.next==null)
+            return null;
+
+        if(k==1){
+            ListNode tmp = head.next;
+            tmp.prev = null;
+            head.next = null;
+            return tmp;
+        }
+
+        int counter = 0;
+        ListNode tmp = head;
+
+        while(tmp!=null){
+            counter++;
+            if(counter==k-1){
+                ListNode element = tmp.next;
+                tmp.next = element.next;
+
+                if(element.next!=null){
+                    ListNode another = element.next;
+                    another.prev = tmp;
+                }
+                element.next = null;
+                element.prev = null;
+                break;
+            }
+
+            tmp = tmp.next;
+        }
+        return head;
+    }
 }
