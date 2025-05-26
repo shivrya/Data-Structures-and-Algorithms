@@ -122,4 +122,25 @@ public class Foundation_DoublyLinkedList {
         }
         return head;
     }
+
+    public void deleteGivenNode(ListNode node) {
+        ListNode tmp = node;
+        ListNode previous = tmp.prev;
+        ListNode nextNode = node.next;
+
+        if(previous!=null&& nextNode!=null){
+            previous.next = nextNode;
+            nextNode.prev = previous;
+            tmp.prev = null;
+            tmp.next = null;
+            
+        }else if(previous==null){
+            nextNode.prev = null;
+            tmp.next = null;
+        }else if(nextNode==null){
+            previous.next = null;
+            tmp.prev = null;
+        }
+
+    }
 }
