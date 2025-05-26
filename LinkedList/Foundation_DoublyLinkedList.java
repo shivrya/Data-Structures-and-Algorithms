@@ -56,6 +56,7 @@ public class Foundation_DoublyLinkedList {
         System.out.println();
     }
 
+    // Delete head  from the doubly linked list
     public ListNode deleteHead(ListNode head) {
 
         if(head==null)
@@ -72,6 +73,7 @@ public class Foundation_DoublyLinkedList {
 
     }
 
+    // Delete tail from the doubly linked list
     public ListNode deleteTail(ListNode head) {
 
         if(head==null || head.next==null)
@@ -89,6 +91,7 @@ public class Foundation_DoublyLinkedList {
         return head;
     }
 
+    // Delete Kth node from the doubly linked list
     public ListNode deleteKthElement(ListNode head, int k) {
         if(head==null || head.next==null)
             return null;
@@ -123,6 +126,7 @@ public class Foundation_DoublyLinkedList {
         return head;
     }
 
+    // Delete given node from the doubly linked list
     public void deleteGivenNode(ListNode node) {
         ListNode tmp = node;
         ListNode previous = tmp.prev;
