@@ -1,4 +1,4 @@
-package Data_Structures_Algorithms.patterns;
+package Data_Structures_Algorithms.Patterns;
 
 public class Pattern1 {
     /* 
