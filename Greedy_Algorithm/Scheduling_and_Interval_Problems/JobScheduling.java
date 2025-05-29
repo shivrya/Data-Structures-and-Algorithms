@@ -3,8 +3,19 @@ package Data_Structures_Algorithms.Greedy_Algorithm.Scheduling_and_Interval_Prob
 import java.util.Arrays;
 
 public class JobScheduling {
-    
-    public int[] JobScheduling(int[][] Jobs) {
+
+
+    public static void main(String[] args) {
+        int[][] jobs = {{1, 4, 20}, {2, 1, 10}, {3, 1, 40}, {4, 1, 30}};
+
+        int[] result = JobScheduling(jobs);
+
+        // Output the result
+        System.out.println("Number of Jobs: " + result[0]);
+        System.out.println("Maximum Profit: " + result[1]);
+    }
+
+    public static int[] JobScheduling(int[][] Jobs) {
         // Arrays.sort(Jobs, (a, b) -> b[2] - a[2]);
         
         int count = 0;
