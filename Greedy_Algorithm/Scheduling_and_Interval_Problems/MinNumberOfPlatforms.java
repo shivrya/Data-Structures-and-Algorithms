@@ -2,8 +2,18 @@ package Data_Structures_Algorithms.Greedy_Algorithm.Scheduling_and_Interval_Prob
 
 public class MinNumberOfPlatforms {
 
+        public static void main(String[] args) {
+            int[] arr = {900, 945, 955, 1100, 1500, 1800};
+            int[] dep = {920, 1200, 1130, 1150, 1900, 2000};
+
+            // Function call to find minimum number of platforms required
+            int ans = findPlatform(arr, dep);
+
+            System.out.println("Minimum number of Platforms required: " + ans);
+        }
+
         // Function to find minimum number of platforms required
-        public int findPlatform(int[] Arrival, int[] Departure) {
+        public static int findPlatform(int[] Arrival, int[] Departure) {
             int n = Arrival.length;
     
             // To store the result
