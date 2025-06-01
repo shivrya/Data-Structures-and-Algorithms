@@ -49,6 +49,26 @@ public class LongestNonRepeatingSubstring {
         //     }
         // }
         // return maxlength;
-        
+
+        // APPROACH 3:
+        //     int left = 0;
+        //     int right = 0;
+        //     int maxlength = 0;
+        //     int n = s.length();
+        //     HashSet<Character> set = new HashSet<>();
+
+        //     while(right < n){
+
+        //       if(set.contains(s.charAt(right))){
+        //         set.remove(s.charAt(left));
+        //         left++;
+        //         continue;
+        //       }
+        //       set.add(s.charAt(right));
+        //       maxlength = Math.max(maxlength,right-left+1);
+        //       right++;
+        //     }
+        //     return maxlength;
+        // 
+        }
     }
-}
