@@ -32,7 +32,23 @@ public class LongestNonRepeatingSubstring {
             }
         }
         return maxlength;
-        
 
+        // APPROACH 2:
+        // for(int i=0;i<n;i++){
+
+        //     int[] hash = new int[256];
+        //     hash[s.charAt(i)] =1;
+       
+        //     for(int j=i+1;j<n;j++){
+
+        //         if(hash[s.charAt(j)]==1){
+        //             break;
+        //         } 
+        //         hash[s.charAt(j)]=1;
+        //         maxlength = Math.max(maxlength,j-i+1);
+        //     }
+        // }
+        // return maxlength;
+        
     }
 }
