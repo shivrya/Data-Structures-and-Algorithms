@@ -2,12 +2,17 @@ package Data_Structures_Algorithms.Patterns;
 
 public class Pattern3 {
 
-
     // *
     // **
     // ***
     // ****
     // *****
+
+    public static void main(String[] args) {
+        int N = 5;
+
+        pattern3(N);
+    }
 
     public static void pattern3(int n) {
         
