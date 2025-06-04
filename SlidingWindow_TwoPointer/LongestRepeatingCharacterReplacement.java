@@ -23,7 +23,13 @@ public class LongestRepeatingCharacterReplacement {
             // it could one other character occuring k+1 times
             // it could be difference character occuring k+1 times
 
+            int maxfrequency = 0;
+            int left = 0;
+            int right = 0;
+            int n = s.length();
+            int[] hash = new int[26];
             int maxlength = 0;
+
 
 
             return maxlength;
