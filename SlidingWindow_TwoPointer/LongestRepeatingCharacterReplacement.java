@@ -3,7 +3,7 @@ package Data_Structures_Algorithms.SlidingWindow_TwoPointer;
 public class LongestRepeatingCharacterReplacement {
 
     public static void main(String[] args) {
-        String s = "AABABBA";
+        String s = "BAABAABBBAAA";
         int k = 2;
 
         int length = characterReplacement(s, k);
@@ -30,11 +30,23 @@ public class LongestRepeatingCharacterReplacement {
             int[] hash = new int[26];
             int maxlength = 0;
 
-
-
+            while(right<n){
+                hash[s.charAt(right)-'A']++;
+                maxfrequency = Math.max(maxfrequency,hash[s.charAt(right)-'A']);
+                int changesrequired = (right-left+1) - maxfrequency;
+    
+                while(changesrequired > k){
+                    hash[s.charAt(left)-'A']--;
+                    left++;
+                    for(int i=0;i<26;i++){
+                        if(hash[i]>maxfrequency)
+                            maxfrequency = hash[i];
+                    }
+                    changesrequired = (right-left+1) - maxfrequency;
+                }
+                maxlength = Math.max(maxlength,right-left+1);
+                right++;
+            }
             return maxlength;
-
-
-            
         }
 }
