@@ -47,4 +47,11 @@ public class MinWindow {
         
         return output;
     }
+
+    // Better approach using two pointer technique
+    public static String minWindow1(String s, String t) {
+        String output = "";
+
+        return output;
+    }
 }
