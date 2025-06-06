@@ -7,7 +7,7 @@ public class FruitsIntoBaskets {
     public static void main(String[] args) {
         int[] input = {1,2,3,2,2};  
         
-        int length = totalFruits(input);
+        int length = totalFruits1(input);
         
         // Print the result
         System.out.println("Maximum fruits the basket can have: " + length);
@@ -35,5 +35,26 @@ public class FruitsIntoBaskets {
         return maxlength;
     }
 
-    
+    // OPTIMAL APPROACH
+    public static int totalFruits1(int[] fruits) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int left = 0;
+        int right = 0;
+        int maxlength = 0;
+
+        while(right<fruits.length){
+            map.put(fruits[right],map.getOrDefault(fruits[right],0)+1);
+
+            while(map.size()>2){
+                map.put(fruits[left],map.getOrDefault(fruits[left],0)-1);
+
+                if(map.get(fruits[left])==0)
+                    map.remove(fruits[left]);
+                left++;
+            }
+            maxlength = Math.max(maxlength,right-left+1);
+            right++;
+        }
+        return maxlength;
+    }
 }
