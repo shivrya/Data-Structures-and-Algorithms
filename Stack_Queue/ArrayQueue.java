@@ -1,6 +1,6 @@
 package Data_Structures_Algorithms.Stack_Queue;
 
-public class QueueUsingArray {
+public class ArrayQueue {
 
     
 
