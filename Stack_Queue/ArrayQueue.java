@@ -66,6 +66,6 @@ public class ArrayQueue {
     }
 
     public boolean isEmpty() {
-        return (end < start) ? true : false;
+        return (end < start);
     }
 }
