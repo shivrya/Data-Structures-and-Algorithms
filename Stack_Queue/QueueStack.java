@@ -1,6 +1,11 @@
 package Data_Structures_Algorithms.Stack_Queue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class QueueStack {
+
+    Queue<Integer> q = new LinkedList<>();
 
     public static void main(String[] args) {
         QueueStack st = new QueueStack();
@@ -36,7 +41,15 @@ public class QueueStack {
     }
 
     public void push(int x) {
-       
+        // Get size
+        int s = q.size();
+        // Add element
+        q.add(x);
+
+        // Move elements before new element to back
+        for (int i = 0; i < s; i++) {
+            q.add(q.poll());
+        }
     }
 
     public int pop() {
