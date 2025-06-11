@@ -21,5 +21,39 @@ public class StackQueue {
         input = new Stack<>();
         output = new Stack<>();
     }
+
+    public void push(int x) {
+        input.push(x);
+    }
+
+    public int pop() {
+        while(!input.isEmpty()){
+            output.push(input.pop());
+        }
+        int x = output.pop();
+
+        while(!output.isEmpty()){
+            input.push(output.pop());
+        }
+        return x;
+      
+    }
+
+    public int peek() {
+        while(!input.isEmpty()){
+            output.push(input.pop());
+        }
+        int x = output.peek();
+
+        while(!output.isEmpty()){
+            input.push(output.pop());
+        }
+        return x;
+        
+    }
+
+    public boolean isEmpty() {
+        return input.isEmpty();
+    }
     
 }
