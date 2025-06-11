@@ -15,6 +15,21 @@ public class StackQueue {
         // List of inputs
         int[][] inputs = {{}, {4}, {8}, {}, {}, {}};
 
+        for (int i = 0; i < commands.length; i++) {
+            if (commands[i].equals("push")) {
+                q.push(inputs[i][0]);
+                System.out.print("null ");
+            } else if (commands[i].equals("pop")) {
+                System.out.print(q.pop() + " ");
+            } else if (commands[i].equals("peek")) {
+                System.out.print(q.peek() + " ");
+            } else if (commands[i].equals("isEmpty")) {
+                System.out.print((q.isEmpty() ? "true" : "false") + " ");
+            } else if (commands[i].equals("StackQueue")) {
+                System.out.print("null ");
+            }
+        }
+
     }
 
     public StackQueue() {
