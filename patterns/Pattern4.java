@@ -11,7 +11,12 @@ public class Pattern4 {
     public static void main(String[] args) {
         int N = 5;
 
+        pattern4(N);
        
+    }
+
+    public static void pattern4(int n){
+
     }
 
 }
