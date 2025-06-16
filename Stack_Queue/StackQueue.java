@@ -29,7 +29,6 @@ public class StackQueue {
                 System.out.print("null ");
             }
         }
-
     }
 
     public StackQueue() {

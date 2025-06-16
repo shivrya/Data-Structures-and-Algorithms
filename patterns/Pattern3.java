@@ -2,11 +2,11 @@ package Data_Structures_Algorithms.Patterns;
 
 public class Pattern3 {
 
-    // *
-    // **
-    // ***
-    // ****
-    // *****
+    // 1
+    // 12
+    // 123
+    // 1234
+    // 12345
 
     public static void main(String[] args) {
         int N = 5;
