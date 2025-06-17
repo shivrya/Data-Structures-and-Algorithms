@@ -3,7 +3,7 @@ package Data_Structures_Algorithms.Stack_Queue;
 public class SumOfSubarrayMinimums {
 
     public static void main(String[] args) {
-        int[] arr = {3, 1, 2, 5};
+        int[] arr = {11, 81, 94,43,3};
         
         /* Creating an instance of 
         Solution class */
@@ -18,7 +18,16 @@ public class SumOfSubarrayMinimums {
 
     public int sumSubarrayMins(int[] arr){
         int sum = 0;
+        int min =  0;
 
+        for(int i=0;i<arr.length;i++){
+            min = arr[i];
+
+            for(int j=i;j<arr.length;j++){
+                min = Math.min(min,arr[j]);
+                sum += min;
+            }
+        }
 
         return sum;
     }
