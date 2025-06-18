@@ -24,6 +24,16 @@ public class NextGreatestElement {
     public int[] nextLargerElement(int[] arr) {
         int[] result = new int[arr.length];
 
+        for(int i=0;i<arr.length;i++){
+            for(int j=i;j<arr.length;j++){
+                    if(arr[j]>arr[i]){
+                        result[i]=arr[j];
+                        break;
+                    }else{
+                        result[i] = -1;
+                    }
+                }
+            }
         return result;
     }
 
