@@ -15,8 +15,30 @@ public class Trapping_Rainwater {
     }
 
     public int trap(int[] height) {
-        int total = 0;
 
+        int total = 0;
+        int leftmax = 0;
+        int rightmax = 0;
+        int left = 0;
+        int right = height.length - 1;
+
+        while(left<right){
+            if(height[left] < height[right]){
+                if(height[left]<leftmax){
+                    total += leftmax - height[left];
+                }else{
+                    leftmax = height[left];
+                }
+                left = left + 1;
+            }else{
+                if(height[right]<rightmax){
+                    total += rightmax - height[right];
+                }else{
+                    rightmax = height[right];
+                }
+                right = right-1;
+            }
+        }
         return total;
     }
 
