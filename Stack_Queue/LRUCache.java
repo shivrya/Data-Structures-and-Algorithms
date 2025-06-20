@@ -71,13 +71,31 @@ public class LRUCache {
 
 
     public void put(int key, int value) {
-
+        if(map.containsKey(key)){
+            Node currentNode = map.get(key);
+            currentNode.value = value;
+            deleteNode(currentNode);
+            insertAfterHead(currentNode);
+            return;
+        }
+        if(map.size()==cap){
+            Node secondLast = tail.prev;
+            map.remove(secondLast.key);
+            deleteNode(secondLast);
+        }
+        Node newNode = new Node(key,value);
+        insertAfterHead(newNode);
+        map.put(key,newNode);
     }
 
     public int get(int key) {
-        int value=0;
-
-
+        if(!map.containsKey(key))
+            return -1;
+        
+        Node node = map.get(key);
+        int value = node.value;
+        deleteNode(node);
+        insertAfterHead(node);
         return value;
     }
 
