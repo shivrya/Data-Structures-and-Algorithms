@@ -1,6 +1,32 @@
 package Data_Structures_Algorithms.Stack_Queue;
 
+import java.util.HashMap;
+
+class Node{
+    int key,value;
+    public Node prev;
+    public Node next;
+    Node(){
+        key = -1;
+        value = -1;
+        prev = null;
+        next = null;
+    }
+
+    Node(int key, int value){
+        this.key = key;
+        this.value = value;
+        prev = null;
+        next = null;
+    }
+}
+
 public class LRUCache {
+
+    private int cap;
+    HashMap<Integer, Node> map;
+    private Node head;
+    private Node tail;
 
     public static void main(String[] args) {
         // LRU Cache
@@ -19,7 +45,12 @@ public class LRUCache {
     }
 
     public LRUCache(int capacity) {
-
+        this.cap = capacity;
+        map = new HashMap<>();
+        head = new Node();
+        tail = new Node();
+        head.next = tail;
+        tail.prev = head;
     }
 
     public void put(int key, int value) {
