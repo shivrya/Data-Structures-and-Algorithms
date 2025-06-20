@@ -53,6 +53,23 @@ public class LRUCache {
         tail.prev = head;
     }
 
+    public void deleteNode(Node node){
+        Node previous = node.prev;
+        Node next = node.next;
+
+        previous.next = next;
+        next.prev = previous;
+    }
+
+    public void insertAfterHead(Node node){
+        Node afterHead = head.next;
+        head.next = node;
+        afterHead.prev = node;
+        node.prev = head;
+        node.next = afterHead;
+    }
+
+
     public void put(int key, int value) {
 
     }
