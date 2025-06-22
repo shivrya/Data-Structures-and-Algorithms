@@ -10,7 +10,20 @@ public class StringPalindromeCheck {
     }
 
     public boolean palindromeCheck(String s) {
-        return false;
+        return isPalindromOrNot(s, 0, s.length()-1);
+    }
+
+    public boolean isPalindromOrNot(String s,int start, int end){
+        if(start >= end)
+            return true;
+        
+        if(s.charAt(start)!=s.charAt(end)){
+            return false;
+        }
+        start++;
+        end--;
+        return isPalindromOrNot(s,start,end);
+
     }
 
 }
