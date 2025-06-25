@@ -18,8 +18,16 @@ public class Power {
         if(n==0)
             return 1.0;
         
+        if(n < 0){
+            x= 1/x;
+            n *= -1;
+        }
 
-        return 1.0;
+        if(n%2==0)
+            myPow(x*x,n/2);
+        
+
+        return x * myPow(x,--n);
     }
 
 }
