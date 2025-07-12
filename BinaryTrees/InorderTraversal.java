@@ -1,8 +1,6 @@
 package Data_Structures_Algorithms.BinaryTrees;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 
 class TreeNode{
     int value;
@@ -29,7 +27,7 @@ public class InorderTraversal {
 
         InorderTraversal sol = new InorderTraversal();
         // Getting inorder traversal
-        List<Integer> result = sol.inorder(root);
+        List<Integer> result =  sol.inorder(root);
 
         // Displaying the inorder traversal result
         System.out.print("Inorder Traversal: ");
@@ -55,5 +53,4 @@ public class InorderTraversal {
         result.add(root.value);
         recursiveInorder(root.right, result);
     }
-
 }
