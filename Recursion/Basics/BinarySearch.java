@@ -20,7 +20,7 @@ public class BinarySearch {
 
     public boolean binary(int[] arr,int element, int low, int high){
 
-        if(low>=high)
+        if(low>high)
             return false;
         
         int mid = (low+high)/2;
