@@ -3,6 +3,18 @@ package Data_Structures_Algorithms.BinaryTrees;
 import java.util.ArrayList;
 import java.util.List;
 
+class Tuple{
+    TreeNode node;
+    int col;
+    int row;
+
+    Tuple(TreeNode node, int col, int row){
+        this.node = node;
+        this.col = col;
+        this.row = row;
+    }
+ }
+
 public class LevelOrder {
 
     public static void main(String[] args) {
