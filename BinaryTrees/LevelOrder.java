@@ -3,6 +3,18 @@ package Data_Structures_Algorithms.BinaryTrees;
 import java.util.ArrayList;
 import java.util.List;
 
+class TreeNode {
+    int data;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int val) {
+        data = val;
+        left = null;
+        right = null;
+    }
+}
+
 class Tuple{
     TreeNode node;
     int col;
