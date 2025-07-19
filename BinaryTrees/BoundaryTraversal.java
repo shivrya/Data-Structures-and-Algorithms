@@ -53,7 +53,7 @@ public class BoundaryTraversal {
             
             addLeftBoundary(root,result);
             addLeafNodes(root,result);
-            // addRightBoundary(root,result);
+            addRightBoundary(root,result);
             return result;
         }
         public boolean isLeaf(TreeNode root){
@@ -91,5 +91,24 @@ public class BoundaryTraversal {
                 addLeafNodes(root.right,result);
         }
 
-
+        public void addRightBoundary(TreeNode root, List<Integer> result){
+            TreeNode current = root.right;
+            List<Integer> tmp = new ArrayList<>();
+    
+            while(current!=null){
+                if(!isLeaf(current)){
+                    tmp.add(current.data);
+                }
+                if(current.right!=null){
+                    current = current.right;
+                }
+                else
+                    current = current.left;
+            }
+    
+            for(int i=tmp.size()-1;i>=0;i--){
+                result.add(tmp.get(i));
+            }
+    
+        }
 }
