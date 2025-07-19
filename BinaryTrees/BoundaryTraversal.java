@@ -15,6 +15,7 @@ class TreeNode {
 public class BoundaryTraversal {
 
         public static void main(String[] args) {
+
             // Creating a sample binary tree
             TreeNode root = new TreeNode(1);
             root.left = new TreeNode(2);
