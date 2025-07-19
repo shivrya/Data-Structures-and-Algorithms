@@ -52,7 +52,7 @@ public class BoundaryTraversal {
                 result.add(root.data);
             
             addLeftBoundary(root,result);
-            // addLeafNodes(root,result);
+            addLeafNodes(root,result);
             // addRightBoundary(root,result);
             return result;
         }
@@ -76,6 +76,19 @@ public class BoundaryTraversal {
                     current = current.right;
                 }
             }
+        }
+
+        public void addLeafNodes(TreeNode root, List<Integer> result){
+
+            if(isLeaf(root)){
+                result.add(root.data);
+                return;
+            }        
+            if(root.left!=null)
+                addLeafNodes(root.left,result);
+            
+            if(root.right!=null)
+                addLeafNodes(root.right,result);
         }
 
 
