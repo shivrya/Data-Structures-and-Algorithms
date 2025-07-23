@@ -1,4 +1,4 @@
-package Data_Structures_Algorithms.BinaryTrees;
+package Data_Structures_Algorithms.BinaryTrees.Traversals;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

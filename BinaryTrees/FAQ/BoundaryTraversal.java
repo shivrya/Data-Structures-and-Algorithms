@@ -1,4 +1,4 @@
-package Data_Structures_Algorithms.BinaryTrees;
+package Data_Structures_Algorithms.BinaryTrees.FAQ;
 
 import java.util.*;
 

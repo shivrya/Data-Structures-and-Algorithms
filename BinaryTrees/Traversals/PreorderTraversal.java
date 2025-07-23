@@ -1,4 +1,5 @@
-package Data_Structures_Algorithms.BinaryTrees;
+
+package Data_Structures_Algorithms.BinaryTrees.Traversals;
 
 import java.util.*;
 
@@ -15,7 +16,7 @@ class TreeNode{
     }
 }
 
-public class InorderTraversal {
+public class PreorderTraversal {
 
     public static void main(String[] args) {
         // Creating a sample binary tree
@@ -25,7 +26,7 @@ public class InorderTraversal {
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
 
-        InorderTraversal sol = new InorderTraversal();
+        PreorderTraversal sol = new PreorderTraversal();
         // Getting inorder traversal
         List<Integer> result =  sol.inorder(root);
 
@@ -39,18 +40,36 @@ public class InorderTraversal {
     }
 
     public List<Integer> inorder(TreeNode root){
-        ArrayList<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
-        recursiveInorder(root,result);
+        iterativePreorder(root, result);
         return result;
+        
+    }
+
+    public void iterativePreorder(TreeNode root, List<Integer> result){
+        Stack<TreeNode> st = new Stack<>();
+        st.push(root);
+
+        while(!st.isEmpty()){
+            TreeNode newRoot = st.pop();
+            result.add(newRoot.value);
+
+            if(newRoot.right!=null)
+                st.push(newRoot.right);
+            if(newRoot.left!=null)
+                st.push(newRoot.left);
+        }
     }
 
     public void recursiveInorder(TreeNode root, ArrayList result){
+        
         if(root==null)
             return;
-        
-        recursiveInorder(root.left, result);
+    
+        recursiveInorder(root.left,result);
         result.add(root.value);
         recursiveInorder(root.right, result);
     }
+
 }
