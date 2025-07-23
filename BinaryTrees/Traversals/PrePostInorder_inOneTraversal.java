@@ -47,8 +47,13 @@ public class PrePostInorder_inOneTraversal {
 
     public void treeTraversal(TreeNode root, ArrayList<Integer> preorder, ArrayList<Integer> inorder,  ArrayList<Integer> postorder){
 
-
-    
+            if(root==null)
+                return;
+            
+            preorder.add(root.data);
+            treeTraversal(root.left, preorder, inorder, postorder);
+            inorder.add(root.data);
+            treeTraversal(root.left, preorder, inorder, postorder);
+            postorder.add(root.data);
     }
-
 }
