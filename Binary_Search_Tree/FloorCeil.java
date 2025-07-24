@@ -28,8 +28,22 @@ public class FloorCeil {
             int floor = -1;
             int ceil = -1;
 
+            while(root!=null){
+                if(root.data==key){
+                    floor = root.data;
+                    ceil = root.data;
+                    break;
+                }else if(root.data > key){
+                    ceil = root.data;
+                    root = root.left;
+                }else{
+                    floor = root.data;
+                    root = root.right;
+                }
+            }
 
-            result.add(floor,ceil);
+            result.add(floor);
+            result.add(ceil);
             return result;
     }
 
