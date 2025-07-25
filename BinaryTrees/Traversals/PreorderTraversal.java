@@ -16,7 +16,7 @@ class TreeNode{
     }
 }
 
-public class PreorderTraversal {
+class PreorderTraversal {
 
     public static void main(String[] args) {
         // Creating a sample binary tree
@@ -36,7 +36,6 @@ public class PreorderTraversal {
         for (int val : result) {
             System.out.print(val + " ");
         }
-        System.out.println();
     }
 
     public List<Integer> inorder(TreeNode root){
