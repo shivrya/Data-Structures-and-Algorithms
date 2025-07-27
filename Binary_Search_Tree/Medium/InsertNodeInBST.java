@@ -23,7 +23,7 @@ public class InsertNodeInBST {
         root = solution.insertIntoBST(root, val);
         
         // Print the BST in-order to verify the insertion
-        // solution.printInOrder(root); // Output should be: 1 2 3 4 5 7
+        solution.printInOrder(root); // Output should be: 1 2 3 4 5 7
     }
 
     public TreeNode insertIntoBST(TreeNode root, int val) {
@@ -42,6 +42,13 @@ public class InsertNodeInBST {
                 insertIntoBST(root.right,val);
         }
         return root;
+    }
+
+    private void printInOrder(TreeNode root) {
+        if (root == null) return;
+        printInOrder(root.left);
+        System.out.print(root.data + " ");
+        printInOrder(root.right);
     }
 
 }
