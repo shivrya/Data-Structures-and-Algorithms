@@ -20,9 +20,28 @@ public class InsertNodeInBST {
         root.left.right = new TreeNode(3);
         
         int val = 5;
-        // root = solution.insertIntoBST(root, val);
+        root = solution.insertIntoBST(root, val);
         
         // Print the BST in-order to verify the insertion
         // solution.printInOrder(root); // Output should be: 1 2 3 4 5 7
     }
+
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if(root==null)
+        return new TreeNode(val);
+    
+        if(root.data > val){
+            if(root.left==null)
+                root.left = new TreeNode(val);
+            else
+                insertIntoBST(root.left,val);
+        }else{
+            if(root.right==null)
+                root.right = new TreeNode(val);
+            else
+                insertIntoBST(root.right,val);
+        }
+        return root;
+    }
+
 }
