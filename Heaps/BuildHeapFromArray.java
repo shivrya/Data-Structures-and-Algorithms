@@ -14,10 +14,18 @@ public class BuildHeapFromArray {
         BuildHeapFromArray sol = new BuildHeapFromArray();
 
         // Function call to convert the given array into a min-heap
-        // sol.buildMinHeap(nums);
+        sol.buildMinHeap(nums);
 
         // Output array
         System.out.println("Min-heap array: " + Arrays.toString(nums));
+    }
+
+    public void buildMinHeap(int[] nums) {
+
+        for(int i=nums.length-1;i>=0;i--){
+        //    heapifyDown(nums,i);
+        }
+
     }
 
 }
