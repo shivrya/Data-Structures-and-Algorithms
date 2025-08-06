@@ -1,5 +1,8 @@
 package Data_Structures_Algorithms.Sorting;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MergeSort {
 
     public static void main(String[] args) {
@@ -14,11 +17,11 @@ public class MergeSort {
         // Create an instance of the Solution class
         MergeSort sol = new MergeSort();
         // Function call to sort the array
-        // int[] sortedArr = sol.mergeSort(arr);
+        int[] sortedArr = sol.mergeSort(arr);
 
         System.out.println("After Sorting Array: ");
         for (int i = 0; i < n; i++)
-            // System.out.print(sortedArr[i] + " ");
+            System.out.print(sortedArr[i] + " ");
         System.out.println();
     }
 
@@ -35,5 +38,31 @@ public class MergeSort {
         mergeSortHelper(nums,mid+1,high);
         merge(nums,low,mid,high);
     }
-    public void merge(int[] nums, int low, int mid, int high){}
+    public void merge(int[] nums, int low, int mid, int high){
+        List<Integer> tmp = new ArrayList<>();
+        int left = low;
+        int right = mid+1;
+        while(left <= mid && right <= high){
+            if(nums[left] >= nums[right]){
+                tmp.add(nums[right]);
+                right++;
+            }else{
+                tmp.add(nums[left]);
+                left++;
+            }
+        }
+
+        while(left<=mid){
+            tmp.add(nums[left]);
+            left++;
+        }
+        while(right<=high){
+            tmp.add(nums[right]);
+            right++;
+        }
+
+        for(int i=low;i<=high;i++){
+            nums[i] = tmp.get(i-low);
+        }
+    }
 }
