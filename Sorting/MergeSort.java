@@ -26,5 +26,14 @@ public class MergeSort {
         mergeSortHelper(nums,0,nums.length-1);
         return nums;
     }
-    public void mergeSortHelper(int[] nums, int low,int high){}
+    public void mergeSortHelper(int[] nums, int low,int high){
+        if(low>=high)
+            return;
+        
+        int mid = (low+high)/2;
+        mergeSortHelper(nums,low,mid);
+        mergeSortHelper(nums,mid+1,high);
+        merge(nums,low,mid,high);
+    }
+    public void merge(int[] nums, int low, int mid, int high){}
 }
