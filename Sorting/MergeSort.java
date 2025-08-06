@@ -21,4 +21,10 @@ public class MergeSort {
             // System.out.print(sortedArr[i] + " ");
         System.out.println();
     }
+
+    public int[] mergeSort(int[] nums) {
+        mergeSortHelper(nums,0,nums.length-1);
+        return nums;
+    }
+    public void mergeSortHelper(int[] nums, int low,int high){}
 }
