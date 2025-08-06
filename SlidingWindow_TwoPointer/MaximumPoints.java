@@ -11,8 +11,7 @@ public class MaximumPoints {
         int result = sol.maxScore(nums, 3);
 
         // Output the maximum score
-        System.out.println("The maximum score is:");
-        System.out.println(result);
+        System.out.println("The maximum score is: "+result);
     }
 
     public int maxScore(int[] nums, int k){
