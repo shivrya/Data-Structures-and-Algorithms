@@ -1,8 +1,6 @@
 package Data_Structures_Algorithms.Graphs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Bfs {
 
@@ -20,9 +18,38 @@ public class Bfs {
 
         Bfs sol = new Bfs();
 
-        // List<Integer> bfs = sol.bfsOfGraph(V, adj);
+        List<Integer> bfs = sol.bfsOfGraph(V, adj);
 
-        // System.out.println("The BFS traversal of the given graph is: " + bfs);
+        System.out.println("The BFS traversal of the given graph is: " + bfs);
+    }
+
+    public List<Integer> bfsOfGraph(int V, List<List<Integer>> adj) {
+        List<Integer> result = new ArrayList<>();
+        boolean[] visited = new boolean[V];
+
+        for(int i=0;i<V;i++){
+            if(!visited[i])
+                bfs(i,adj,visited,result);
+        }
+        return result;
+    }
+
+    public void bfs(int node, List<List<Integer>> adj, boolean[] visited, List<Integer> result){
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(node);
+        visited[node] = true;
+
+        while(!queue.isEmpty()){
+            int currentNode = queue.poll();
+            result.add(currentNode);
+
+            for(int neighbor : adj.get(currentNode)){
+                if(!visited[neighbor]){
+                    queue.offer(neighbor);
+                     visited[neighbor] = true;
+                }
+            }
+        }
     }
 
 
