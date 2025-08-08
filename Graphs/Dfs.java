@@ -25,6 +25,24 @@ public class Dfs {
         System.out.println("The DFS traversal of the given graph is: " + dfs);
     }
 
+    public List<Integer> dfsOfGraph(int V, List<List<Integer>> adj) {
+        List<Integer> result = new ArrayList<>(V);
+        boolean[] visited = new boolean[V];
 
+        for(int i=0;i<V;i++){
+            if(!visited[i])
+                dfs(i,adj,result,visited);
+        }
+        return result;
+    }
 
+    public void dfs(int node, List<List<Integer>> adj, List<Integer> result, boolean[] visited){
+        result.add(node);
+        visited[node] = true;
+
+        for(int neighbor : adj.get(node)){
+            if(!visited[neighbor])
+                dfs(neighbor,adj,result,visited);
+        }
+    }
 }
